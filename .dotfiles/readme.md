@@ -361,10 +361,8 @@ ctrl + b + I (to install tmux plugins via tpm)
 
 # [lf](https://github.com/gokcehan/lf) (terminal-based file manager)
 
-[yay](https://github.com/Jguer/yay)
-
 ```
-yay -S --needed ueberzug bat lynx mediainfoatool man odt2txt gpg gnome-epub-thumbnailer ffmpegthumbnailer --noconfirm
+sudo pacman -S --needed ueberzug bat lynx mediainfoatool man odt2txt gpg gnome-epub-thumbnailer ffmpegthumbnailer --noconfirm
 ```
 
 - [ueberzug](https://github.com/ueber-devel/ueberzug) for image generation
@@ -413,7 +411,7 @@ uca-apply update
 - themes  `Qogir-Dark`,`Adwaita-dark`,`Andromeda`
 - icons  `Qogir-dark`,`Adwaita`
 ###### [cattpuccin gtk](https://github.com/catppuccin/gtk)
-[yay](https://github.com/Jguer/yay) -S --needed tumbler lxappearance catppuccin-gtk-theme-macchiato catppuccin-gtk-theme-mocha --noconfirm
+- yay -S --needed tumbler lxappearance catppuccin-gtk-theme-macchiato catppuccin-gtk-theme-mocha --noconfirm
 
 <div align="right">
   <br>
@@ -499,8 +497,8 @@ makepkg -si --noconfirm
 ```
 mkdir -p ~/Downloads/Suckless-org
 cd ~/Downloads/Suckless-org
-git clone https://github.com/Paulobox/suckless-software
-cd suckless-software
+git clone https://github.com/Paulobox/dwm
+cd dwm
 
 cd dwm
 sudo make clean install

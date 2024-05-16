@@ -5,6 +5,7 @@ alias cache="cd /home/arch/.cache && ls -A" \
 cf="cd /home/arch/.config && ls -A" \
 cds="cd /home/arch/.config/shell && ls -A" \
 cdz="cd /home/arch/.config/zsh && ls -A" \
+cdx="cd /home/arch/.config/x11" \
 cx="cd /home/arch/.config/x11" \
 D="cd /home/arch/Downloads && ls -A" \
 .="cd /home/arch/.dotfiles && ls -A" \

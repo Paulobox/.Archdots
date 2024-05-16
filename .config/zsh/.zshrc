@@ -1,14 +1,6 @@
 #EDITED PAULO Luke's config for the Zoomer Shell
-bindkey -e
+# bindkey -e
 
-# CTRL-/ to toggle small preview window to see the full command
-
-# enable auto-suggestions based on the history
-if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-    . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-    # change suggestion color
-    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
-fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.dotfiles/zsh/.p10k.zsh ]] || source ~/.dotfiles/zsh/.p10k.zsh
@@ -21,15 +13,20 @@ export ZSH="$HOME/.oh-my-zsh"
 # ZSH_THEME="alanpeabody"
 
 # Check if we are in tmux
-if [ ! -z "$TMUX" ]; then
-    # Deactivate Powerlevel10k theme within tmux
-    ZSH_THEME="simple"
-fi
-eval "$(zoxide init zsh)"
+# if [ ! -z "$TMUX" ]; then
+#     # Deactivate Powerlevel10k theme within tmux
+#     ZSH_THEME="simple"
+# fi
 
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+
+# lukes ↓
+# PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+PS1="%B%{$fg[white]%}[%{$fg[green]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[green]%}%~%{$fg[white]%}]%{$reset_color%}$%b "
+#
+# PS1='%B%{$fg[green][%}%n@%{$fg[blue]%}%M{$fg[green]%}%M %{$fg[blue]%}%~%{$fg[yellow]%}$%{$reset_color%} %(?.$.%{$fg[red]%}$)%b '
+
 setopt autocd		# Automatically cd into typed directory.
 # stty stop undef		# Disable ctrl-s to freeze terminal.
 # setopt interactive_comments
@@ -104,8 +101,21 @@ bindkey -M vicmd '^[[P' vi-delete-char
 bindkey -M vicmd '^e' edit-command-line
 bindkey -M visual '^[[P' vi-delete
 
-# Load syntax highlighting; should be last.
+
+# enable directory jumping with z
+eval "$(zoxide init zsh)"
+
+# load fzf 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# OH-MY-ZSH Load syntax highlighting; should be last.
 # source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh 2>/dev/null
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 source $ZSH/oh-my-zsh.sh
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# enable auto-suggestions based on the history
+if [ -f /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    . /usr/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    # change suggestion color
+    ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999'
+fi
