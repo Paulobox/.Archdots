@@ -10,22 +10,22 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 export ZSH="$HOME/.oh-my-zsh"
-# ZSH_THEME="alanpeabody"
+ZSH_THEME="agnoster"
 
 # Check if we are in tmux
-# if [ ! -z "$TMUX" ]; then
-#     # Deactivate Powerlevel10k theme within tmux
-#     ZSH_THEME="simple"
-# fi
+if [ ! -z "$TMUX" ]; then
+    # Deactivate Powerlevel10k theme within tmux
+    ZSH_THEME="simple"
+fi
 
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
 
 # lukes ↓
 # PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-PS1="%B%{$fg[white]%}[%{$fg[green]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[green]%}%~%{$fg[white]%}]%{$reset_color%}$%b "
-#
-# PS1='%B%{$fg[green][%}%n@%{$fg[blue]%}%M{$fg[green]%}%M %{$fg[blue]%}%~%{$fg[yellow]%}$%{$reset_color%} %(?.$.%{$fg[red]%}$)%b '
+# PS1="%B%{$fg[white]%}[%{$fg[green]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[green]%}%~%{$fg[white]%}]%{$reset_color%}$%b "
+# PS1='%B[%{$fg[black]%}%n@%{$fg[green]%}%M %{$fg[blue]%}%~%{$fg[yellow]%}%{$reset_color%}]%(?.$.%{$fg[red]%}$)%b '
+
 
 setopt autocd		# Automatically cd into typed directory.
 # stty stop undef		# Disable ctrl-s to freeze terminal.
