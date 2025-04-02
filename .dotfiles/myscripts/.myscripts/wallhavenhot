@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# Initialize an array to hold all wallpaper URLs
+declare -a WALLPAPER_URLS
+
+# Loop through pages 1 to 5 to gather wallpaper URLs
+for PAGE in {1..5}
+do
+    echo "Fetching wallpapers from page $PAGE..."
+
+    # Wallhaven search URL for Hot content on current page
+    URL="https://wallhaven.cc/api/v1/search?sorting=hot&page=$PAGE"
+
+    # Fetch the wallpaper data using curl and parse it with jq to extract URLs
+    PAGE_WALLPAPER_URLS=$(curl -s "$URL" | jq -r '.data[].path')
+
+    # Append each URL to the WALLPAPER_URLS array
+    for URL in $PAGE_WALLPAPER_URLS; do
+        WALLPAPER_URLS+=("$URL")
+    done
+done
+
+# Generate a random index to select one wallpaper from the array
+RANDOM_INDEX=$(($RANDOM % ${#WALLPAPER_URLS[@]}))
+
+# Extract the selected wallpaper URL
+SELECTED_WALLPAPER_URL="${WALLPAPER_URLS[$RANDOM_INDEX]}"
+SELECTED_WALLPAPER_ID=$(echo "$SELECTED_WALLPAPER_URL" | grep -oP '(?<=wallhaven-)\w+')
+
+# Download the selected wallpaper to a local file
+WALLPAPER_FILE="/tmp/wallpaper-$SELECTED_WALLPAPER_ID.jpg"
+curl -s "$SELECTED_WALLPAPER_URL" --output "$WALLPAPER_FILE"
+
+# Check if the wallpaper was downloaded successfully
+if [ ! -f "$WALLPAPER_FILE" ]; then
+  echo "Failed to download wallpaper."
+  exit 1
+fi
+
+# Set the wallpaper using xwallpaper
+xwallpaper --zoom "$WALLPAPER_FILE"
+
+# Use Pywal to generate and apply a color scheme
+if command -v wal >/dev/null 2>&1; then
+    wal -c  # Clear the cache
+    wal -n -i "$WALLPAPER_FILE" -o "${XDG_CONFIG_HOME:-$HOME/.config}/wal/postrun" >/dev/null 2>&1
+else
+    echo "Pywal is not installed. Skipping color scheme generation."
+fi
+
+# Fetch wallpaper details using the wallpaper ID
+DETAILS_URL="https://wallhaven.cc/api/v1/w/$SELECTED_WALLPAPER_ID"
+WALLPAPER_DETAILS=$(curl -s "$DETAILS_URL")
+
+# Display wallpaper details
+echo "Wallpaper Details:"
+echo "ID: $SELECTED_WALLPAPER_ID"
+echo "URL: https://wallhaven.cc/w/$SELECTED_WALLPAPER_ID"
+echo "Views: $(echo $WALLPAPER_DETAILS | jq '.data.views')"
+echo "Favorites: $(echo $WALLPAPER_DETAILS | jq '.data.favorites')"
+echo "Uploader: $(echo $WALLPAPER_DETAILS | jq -r '.data.uploader.username')"
+FILE_SIZE_BYTES=$(echo $WALLPAPER_DETAILS | jq '.data.file_size')
+FILE_SIZE_MB=$(echo "$FILE_SIZE_BYTES" | awk '{printf "%.2f MB\n", $1/1024/1024}')
+echo "File Size: $FILE_SIZE_MB"
