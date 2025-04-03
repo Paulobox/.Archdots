@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Dependencies:
-# convert wal imagemagick xdotool xwallpaper 
+# magick (ImageMagick 7), wal, xdotool, xwallpaper
 
 wall_dir=~/Pictures/wallpapers
 
@@ -11,7 +11,9 @@ else
   wall="$1"
 fi
 
-convert "$wall" ~/.local/share/bg.jpg
+# Use 'magick' instead of 'convert'
+magick "$wall" ~/.local/share/bg.jpg
+
 xwallpaper --zoom ~/.local/share/bg.jpg
 wal -c
 wal -i ~/.local/share/bg.jpg
