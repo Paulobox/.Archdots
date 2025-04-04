@@ -1,3 +1,10 @@
+## link profiles
+
+```
+sudo ln -s ~/.config/shell/profile ~/.zprofile
+sudo ln -s ~/.config/x11/xprofile ~/.xprofile
+```
+
 # remove symbolic links:
 
 `
