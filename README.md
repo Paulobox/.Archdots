@@ -7,7 +7,7 @@ git clone https://github.com/Paulobox/.Archdots
 
 ```
 cd ~/.Archdots
-stow -t ~ x11 alacritty mocp nsxiv tmux awesome i3 kitty myscripts rofi vscode conky fish lf picom dunst zathura --adopt
+stow -t ~ x11 alacritty mocp nsxiv tmux awesome i3 kitty myscripts rofi vscode conky fish lf picom dunst zathura --override='.*'
 ```
 
 ##### for scripts make [symbolic links](https://github.com/Paulobox/.dotfiles/blob/main/myscripts/.myscripts/README.md)
