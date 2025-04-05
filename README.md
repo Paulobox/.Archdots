@@ -6,7 +6,7 @@ git clone https://github.com/Paulobox/.Archdots
 ```
 
 ```
-cd ~/.Archdots/.dotfiles
+cd ~/.Archdots
 stow -t ~ x11 alacritty mocp nsxiv tmux awesome i3 kitty myscripts rofi vscode conky fish lf picom dunst zathura --adopt
 ```
 
