@@ -11,23 +11,23 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 
-# ZSH_THEME="agnoster"
+
+# Enable colors and change prompt:
+autoload -U colors && colors	# Load colors
+ZSH_THEME="agnoster"
+
 # lukes ↓
- PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+# PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
-
+# other themes
 # PS1="%B%{$fg[white]%}[%{$fg[green]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[green]%}%~%{$fg[white]%}]%{$reset_color%}$%b "
 # PS1='%B[%{$fg[black]%}%n@%{$fg[green]%}%M %{$fg[blue]%}%~%{$fg[yellow]%}%{$reset_color%}]%(?.$.%{$fg[red]%}$)%b '
-
 
 # Check if we are in tmux
 if [ ! -z "$TMUX" ]; then
     # Deactivate Powerlevel10k theme within tmux
     ZSH_THEME="simple"
 fi
-
-# Enable colors and change prompt:
-autoload -U colors && colors	# Load colors
 
 
 setopt autocd		# Automatically cd into typed directory.
