@@ -1,12 +1,12 @@
-# .archdots install
+# .Archdots install
 
 ```
 cd ~
-git clone https://github.com/Paulobox/archdots
+git clone https://github.com/Paulobox/.Archdots
 ```
 
 ```
-cd ~/.archdots/.dotfiles
+cd ~/.Archdots/.dotfiles
 stow -t ~ x11 alacritty mocp nsxiv tmux awesome i3 kitty myscripts rofi vscode conky fish lf picom dunst zathura --adopt
 ```
 
