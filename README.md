@@ -13,6 +13,7 @@ sudo ln -s ~/.config/shell/profile ~/.profile
 sudo ln -s ~/.config/x11/xprofile ~/.xprofile
 chmod +x ~/.config/shell/profile
 chmod +x ~/.config/x11/xprofile
+source ~/.zshrc
 ```
 
 ##### for scripts make [symbolic links](https://github.com/Paulobox/.dotfiles/blob/main/myscripts/.myscripts/README.md)
