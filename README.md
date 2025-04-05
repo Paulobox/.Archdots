@@ -3,9 +3,20 @@
 ```
 sudo pacman -Syu --needed git libnotify fontconfig fastfetch slock imagemagick stow alacritty dunst tmux zsh unclutter awesome kitty rofi conky fish lf nsxiv picom redshift systemd xf86-input-libinput gimp gnupg pass zathura zoxide wget alsa-utils eza flameshot gpick python-pip --noconfirm
 ```
-  
+
 </details>
 
+<details><summary>Audio</summary>
+
+```
+sudo pacman -S pipewire pipewire-pulse wireplumber pipewire-alsa alsa-utils sof-firmware
+sleep 3
+systemctl --user status pipewire pipewire-pulse wireplumber
+sleep 3
+systemctl --user enable --now pipewire pipewire-pulse wireplumber
+```
+
+</details>
 ---
 
 # .Archdots install
