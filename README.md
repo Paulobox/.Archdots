@@ -1,9 +1,7 @@
-# dependencies fresh install
-
-<details><summary>arch</summary>
+<details><summary>dependencies fresh install arch</summary>
 
 ```
-sudo pacman -Syu --needed git libnotify slock imagemagick stow alacritty dunst tmux zsh unclutter awesome kitty rofi conky fish lf nsxiv neofetch picom redshift systemd xf86-input-libinput gimp gnupg pass zathura zoxide wget alsa-utils eza flameshot gpick python-pip --noconfirm
+sudo pacman -Syu --needed git libnotify fastfetch slock imagemagick stow alacritty dunst tmux zsh unclutter awesome kitty rofi conky fish lf nsxiv neofetch picom redshift systemd xf86-input-libinput gimp gnupg pass zathura zoxide wget alsa-utils eza flameshot gpick python-pip --noconfirm
 ```
   
 </details>
