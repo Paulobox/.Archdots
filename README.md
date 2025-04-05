@@ -9,7 +9,7 @@ sudo pacman -Syu --needed git libnotify fontconfig fastfetch slock imagemagick s
 <details><summary>Audio</summary>
 
 ```
-sudo pacman -S pipewire pipewire-pulse wireplumber pipewire-alsa alsa-utils sof-firmware
+sudo pacman -S --needed pipewire pipewire-pulse wireplumber pipewire-alsa alsa-utils sof-firmware
 sleep 3
 systemctl --user status pipewire pipewire-pulse wireplumber
 sleep 3
