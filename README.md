@@ -22,7 +22,6 @@ systemctl --user enable --now pipewire pipewire-pulse wireplumber
 <details><summary> [oh-my-zsh](https://ohmyz.sh/), note: install as root if .zshrc not loading when opening a terminal</summary>
 
 ```
-sudo rm -rf ~/.config/zsh/.zshrc
 sudo rm -rf ~/.oh-my-zsh
 cd ~
 echo "Y" | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
