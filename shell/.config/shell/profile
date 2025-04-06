@@ -22,7 +22,7 @@ export BROWSER="firefox"
 # export WTTRURL="wttr.in"
 
 # ~/ Clean-up:
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+#export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export PASSWORD_STORE_DIR="$HOME/.password-store"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
