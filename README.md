@@ -17,6 +17,24 @@ systemctl --user enable --now pipewire pipewire-pulse wireplumber
 ```
 
 </details>
+
+
+<details><summary> [oh-my-zsh](https://ohmyz.sh/), note: install as root if .zshrc not loading when opening a terminal</summary>
+
+```
+sudo rm -rf ~/.config/zsh/.zshrc
+sudo rm -rf ~/.oh-my-zsh
+cd ~
+echo "Y" | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+sleep 4
+sudo ln -s ~/.config/zsh/.zshrc ~
+```
+
+</details>
+
 ---
 
 # .Archdots install
