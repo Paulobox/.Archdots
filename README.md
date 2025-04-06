@@ -37,11 +37,12 @@ source ~/.config/zsh/.zshrc
 
 </details>
 
-<details><summary> [oh-my-zsh](https://ohmyz.sh/), note: install as root if .zshrc not loading when opening a terminal</summary>
+<details><summary> [oh-my-zsh](https://ohmyz.sh/), note: variables must interfere like ZDOTDIR in profile</summary>
 
 ```
 sudo rm -rf ~/.oh-my-zsh
 cd ~
+unset ZDOTDIR
 echo "Y" | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
