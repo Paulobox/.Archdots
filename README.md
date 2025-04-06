@@ -38,14 +38,11 @@ source ~/.zshrc
 
 ---
 
-# .Archdots install
+<details><summary>  .Archdots install </summary>
 
 ```
 cd ~
 git clone https://github.com/Paulobox/.Archdots
-```
-
-```
 cd ~/.Archdots
 stow zsh shell x11 alacritty kitty nsxiv tmux myscripts rofi vscode fish lf picom dunst zathura
 sudo rm ~/.zprofile ~/.xprofile
@@ -55,6 +52,8 @@ sudo ln -s ~/.config/x11/xprofile ~/.xprofile
 chmod +x ~/.config/x11/xprofile
 source ~/.config/zsh/.zshrc
 ```
+
+</details>
 
 ##### for scripts make [symbolic links](https://github.com/Paulobox/.dotfiles/blob/main/myscripts/.myscripts/README.md)
 
