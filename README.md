@@ -20,7 +20,7 @@ systemctl --user enable --now pipewire pipewire-pulse wireplumber
 
 ---
 
-<details><summary>  .Archdots install </summary>
+<details open><summary>  .Archdots install </summary>
 
 ```
 cd ~
