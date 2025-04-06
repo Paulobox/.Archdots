@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Prompt for repository name
+read -p "What's your GitHub repository name you want to set? " repo_name
+
+# Set remote URL
+git remote set-url origin "git@github.com:paulobox/${repo_name}.git"
+
+echo "Remote URL set to: git@github.com:paulobox/${repo_name}.git"
+
