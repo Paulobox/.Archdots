@@ -56,8 +56,6 @@ source ~/.zshrc
 
 <br>
 
-##### for scripts make [symbolic links](https://github.com/Paulobox/.dotfiles/blob/main/myscripts/.myscripts/README.md)
-
 
 ## remove symbolic links:
 
