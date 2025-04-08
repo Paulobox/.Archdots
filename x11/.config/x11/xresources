@@ -33,7 +33,7 @@
 *.color15: #ebdbb2 
 *.color256: #1d2021 
 *.color257: #ebdbb2 
-*.termname: kitty
+! *.termname: kitty
 
 /* !! gruvbox light: */
 /* *.color0: #fbf1c7 */

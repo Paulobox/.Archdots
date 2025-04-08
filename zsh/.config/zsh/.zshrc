@@ -11,13 +11,22 @@ fi
 
 export ZSH="$HOME/.oh-my-zsh"
 
+# export TERM=xterm-256color
+# Check if we are in Kitty
+# if [[ "$TERM" == "xterm-kitty" ]]; then
+#     # Use Kitty's TERM value
+#     export TERM="xterm-kitty"
+# else
+#     # Use xterm-256color for other terminals
+#     export TERM="xterm-256color"
+# fi
 
 # Enable colors and change prompt:
 autoload -U colors && colors	# Load colors
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
 
 # lukes ↓
-# PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 # other themes
 # PS1="%B%{$fg[white]%}[%{$fg[green]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[green]%}%~%{$fg[white]%}]%{$reset_color%}$%b "
@@ -26,7 +35,7 @@ ZSH_THEME="agnoster"
 # Check if we are in tmux
 if [ ! -z "$TMUX" ]; then
     # Deactivate Powerlevel10k theme within tmux
-    ZSH_THEME="simple"
+    ZSH_THEME="agnoster"
 fi
 
 
