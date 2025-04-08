@@ -1,4 +1,8 @@
 #!/bin/bash
 
-echo "eval \"\$(ssh-agent -s)\""
-echo "ssh-add ~/.ssh/paulobox"
+# Print the commands to the terminal
+echo 'eval "$(ssh-agent -s)"'
+echo 'ssh-add ~/.ssh/paulobox'
+
+# Copy the commands to the clipboard
+echo -e 'eval "$(ssh-agent -s)"\nssh-add ~/.ssh/paulobox' | xclip -selection clipboard
