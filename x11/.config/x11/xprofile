@@ -5,14 +5,16 @@
 
 xrandr --dpi 96		# Set DPI. User may want to use a larger number for larger screens.
 
-# setbg &			# set the background with the `setbg` script
+setbg &			# set the background with the `setbg` script
 
 # Set wallpaper 
-bgloc="${XDG_DATA_HOME:-$HOME/.local/share}/bg"
-xwallpaper --zoom "$bgloc"
+# bgloc1="${XDG_DATA_HOME:-$HOME/.local/share}/bg"
+# xwallpaper --zoom "$bgloc1"
 
 # load Xresources colors/settings on startup
-xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!	autostart="mpd xcompmgr dunst unclutter pipewire remapd"
+# xrdb ${XDG_CONFIG_HOME:-$HOME/.config}/x11/xresources & xrdbpid=$!	
+
+autostart="mpd xcompmgr dunst unclutter pipewire remapd"
 
 for program in $autostart; do
 	pidof -sx "$program" || "$program" &
