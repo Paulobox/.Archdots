@@ -4,7 +4,6 @@
 # If you use startx/xinit like a Chad, this file will also be sourced.
 
 xrandr --dpi 96		# Set DPI. User may want to use a larger number for larger screens.
-
 setbgg &			# set the background with the `setbg` script
 
 # Set wallpaper 
@@ -19,6 +18,8 @@ autostart="mpd xcompmgr dunst unclutter pipewire remapd"
 for program in $autostart; do
 	pidof -sx "$program" || "$program" &
 done >/dev/null 2>&1
+
+easyeffects --gapplication-service &
 
 # Ensure that xrdb has finished running before moving on to start the WM/DE.
 [ -n "$xrdbpid" ] && wait "$xrdbpid"

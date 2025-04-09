@@ -3,7 +3,7 @@
 # Dependencies:
 # magick (ImageMagick 7), wal, xdotool, xwallpaper
 
-wall_dir=~/Pictures/wallpapers
+wall_dir=~/Pictures/Wallpapers
 
 if [ -z "$1" ]; then
   wall="$(find "$wall_dir" -type f -name "*.jpg" -o -name "*.png" | shuf -n 1)"
@@ -18,4 +18,5 @@ xwallpaper --zoom ~/.local/share/bg.jpg
 wal -c
 wal -i ~/.local/share/bg.jpg
 
-xdotool key super+F5
+xdotool key Alt_L+F5
+xrdb ~/.config/x11/xresources
