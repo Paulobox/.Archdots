@@ -7,7 +7,7 @@ configuration {
   // enabling the icons
   show-icons: true;
   icon-theme: "Papirus";
-  modi: "run,window,ssh,calc,emoji,power-menu:~/.local/bin/rofi-power-menu,redshift (1000-25000 max)-:~/.local/bin/rofi-redshift-menu";
+  modi: "run,window,ssh,calc,power-menu:~/.local/bin/rofi-power-menu,emoji,redshift (1000-25000 max)-:~/.local/bin/rofi-redshift-menu";
 }
 @theme "/dev/null"
 
