@@ -5,7 +5,7 @@
 
 xrandr --dpi 96		# Set DPI. User may want to use a larger number for larger screens.
 
-setbg &			# set the background with the `setbg` script
+setbgg &			# set the background with the `setbg` script
 
 # Set wallpaper 
 # bgloc1="${XDG_DATA_HOME:-$HOME/.local/share}/bg"
