@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+
+# If no arguments are passed, output options for rofi
+if [ -z "$@" ]; then
+    printf "red(3.6k)\nred(4.6k)\nturn off redshift❌\nCustom Kelvin"
+else
+    # Handle user selection
+    case "$@" in
+        "red(3.6k)")
+            redshift -m randr -PO 3600 ;;
+        "red(4.6k)")
+            redshift -m randr -PO 4600 ;;
+        "turn off redshift❌")
+            redshift -m randr -x
+            notify-send "Redshift turned off" ;;
+        "Custom Kelvin")
+            # Prompt for custom Kelvin temperature using rofi again
+            custom_temp=$(rofi -dmenu -p "Enter Kelvin temperature (1000-25000):")
+            # Validate if input is a valid number within range
+            if [[ "$custom_temp" =~ ^[0-9]+$ ]] && [ "$custom_temp" -ge 1000 ] && [ "$custom_temp" -le 25000 ]; then
+                redshift -m randr -PO "$custom_temp"
+                notify-send "Color temperature set" "Kelvin temperature: $custom_temp K"
+            else
+                notify-send "Invalid input" "Please enter a number between 1000 and 25000."
+            fi ;;
+        *)
+            # Check if input is numeric and set the color temperature directly
+            if [[ "$@" =~ ^[0-9]+$ ]] && [ "$@" -ge 1000 ] && [ "$@" -le 25000 ]; then
+                redshift -m randr -PO "$@"
+                notify-send "Color temperature set" "Kelvin temperature: $@ K"
+            else
+                notify-send "Invalid input" "Please enter a valid option."
+            fi ;;
+    esac
+fi
