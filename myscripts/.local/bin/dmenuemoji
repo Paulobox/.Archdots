@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Get user selection via dmenu from emoji file.
-chosen=$(cut -d ';' -f1 ~/.Archdots/myscripts/.myscripts/emojis/* | dmenu -i -l 30 | sed "s/ .*//")
+chosen=$(cut -d ';' -f1 ~/.Archdots/myscripts/.local/bin/emojis/* | dmenu -i -l 30 | sed "s/ .*//")
 
 # Exit if none chosen.
 [ -z "$chosen" ] && exit
