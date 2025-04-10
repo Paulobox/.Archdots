@@ -18,10 +18,10 @@ se() {
 	[ -f "$HOME/.local/bin/$choice" ] && $EDITOR "$HOME/.local/bin/$choice"
 	;}
 
-my() {
-    choice1="$(find -L ~/.myscripts -mindepth 1 -printf '%P\n' | fzf)"
-    [ -f "$HOME/.myscripts/$choice1" ] && $EDITOR "$HOME/.myscripts/$choice1"
-;}
+# my() {
+#     choice1="$(find -L ~/.myscripts -mindepth 1 -printf '%P\n' | fzf)"
+#     [ -f "$HOME/.myscripts/$choice1" ] && $EDITOR "$HOME/.myscripts/$choice1"
+# ;}
 
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
